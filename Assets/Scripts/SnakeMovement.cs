@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 using TMPro;
 
 public class SnakeMovement : MonoBehaviour
@@ -33,6 +34,9 @@ public class SnakeMovement : MonoBehaviour
         {
             transform.Translate(Vector3.right*RotationSpeed*Time.deltaTime);
         }
+        // Debug.Log(score);
+        // Debug.Log(gameObject.name);
+        // Debug.Log(FoodScore.gameObject.name);
         
     }
 
@@ -41,6 +45,8 @@ public class SnakeMovement : MonoBehaviour
         Vector3 newTailPos = tailObjects[tailObjects.Count-1].transform.position;
         newTailPos.z -= _z_offset;
         tailObjects.Add(GameObject.Instantiate(TailPrefab,newTailPos,Quaternion.identity) as GameObject);
+
+        
 
         score++;
         scoreText.text = score.ToString();

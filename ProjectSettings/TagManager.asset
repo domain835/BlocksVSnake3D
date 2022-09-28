@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SnakeMain
   - PlayerScore
+  - Block
   layers:
   - Default
   - TransparentFX
