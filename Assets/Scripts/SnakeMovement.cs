@@ -20,6 +20,7 @@ public class SnakeMovement : MonoBehaviour
     {
         tailObjects.Add(gameObject);
         scoreText.text = score.ToString();
+
     }
 
     void Update()
@@ -46,9 +47,20 @@ public class SnakeMovement : MonoBehaviour
         newTailPos.z -= _z_offset;
         tailObjects.Add(GameObject.Instantiate(TailPrefab,newTailPos,Quaternion.identity) as GameObject);
 
-        
-
         score++;
         scoreText.text = score.ToString();
+    }
+
+    public void DeleteTail()
+    {
+        // Vector3 tailPos = tailObjects[tailObjects.[1]].transform.position;
+
+        // Destroy(tailObjects[1].gameObject);
+        // tailObjects.RemoveAt(1);
+        // tailPos.RemoveAt(1);
+
+        // int lastTail = tailObjects.Count-1;
+        // // newTailPos.z -= _z_offset;
+        // Destroy(tailObjects[lastTail].gameObject);
     }
 }

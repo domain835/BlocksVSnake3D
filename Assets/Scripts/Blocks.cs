@@ -10,6 +10,7 @@ public class Blocks : MonoBehaviour
         if(other.CompareTag("SnakeMain"));
         {
             Destroy(gameObject);
+            other.GetComponent<SnakeMovement>().DeleteTail();
         }
     }
 }
