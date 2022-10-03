@@ -16,11 +16,13 @@ public class SnakeMovement : MonoBehaviour
     public TMP_Text scoreText;
     int score = 1;
 
+    private AudioSource EatingSound;
+
     void Start()
     {
         tailObjects.Add(gameObject);
         scoreText.text = score.ToString();
-
+        EatingSound = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -49,6 +51,8 @@ public class SnakeMovement : MonoBehaviour
 
         score++;
         scoreText.text = score.ToString();
+
+        EatingSound.Play();
     }
 
     public void DeleteTail()
@@ -63,4 +67,5 @@ public class SnakeMovement : MonoBehaviour
         // // newTailPos.z -= _z_offset;
         // Destroy(tailObjects[lastTail].gameObject);
     }
+
 }
